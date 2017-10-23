@@ -16,12 +16,21 @@
       <tr>
         <td><%= link.title %></td>
         <td><%= link.url %></td>
-        <td><%= link_to 'Watch clip', link.url, target: :_blank %></td>
+        <td><%= link.text %></td>
+
+        <% if link.url[0..4].include?("https") or link.url[0..3].include?("www") %>
+          <td><%= link_to 'Watch clip', link.url, target: :_blank %></td>
+          <% else %>
+         <td><%= link_to 'Read post', link %> </td>
+        <% end %>
+
         <td><%= link_to 'Show', link %></td>
+
         <% if link.user == current_user %>
         <td><%= link_to 'Edit', edit_link_path(link) %></td>
         <td><%= link_to 'Destroy', link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
+
       </tr>
     <% end %>
   </tbody>
