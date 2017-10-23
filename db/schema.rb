@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20171023192918) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-    t.text "text"
+    t.text "description"
     t.index ["user_id"], name: "index_links_on_user_id"
   end
 

@@ -16,7 +16,7 @@
       <tr>
         <td><%= link.title %></td>
         <td><%= link.url %></td>
-        <td><%= link.text %></td>
+        <td><%= link.description %></td>
 
         <% if link.url[0..4].include?("https") or link.url[0..3].include?("www") %>
           <td><%= link_to 'Watch clip', link.url, target: :_blank %></td>
