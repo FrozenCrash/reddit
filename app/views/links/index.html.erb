@@ -7,6 +7,7 @@
     <tr>
       <th>Title</th>
       <th>Url</th>
+      <th>Description</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,9 +17,9 @@
       <tr>
         <td><%= link.title %></td>
         <td><%= link.url %></td>
-        <td><%= link.description %></td>
+        <td><%= truncate(link.description, length: 50) %></td>
 
-        <% if link.url[0..4].include?("https") or link.url[0..3].include?("www") %>
+        <% if link_to_video_clip?(link) or add_https_for_links(link) %>
           <td><%= link_to 'Watch clip', link.url, target: :_blank %></td>
           <% else %>
          <td><%= link_to 'Read post', link %> </td>
