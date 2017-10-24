@@ -18,8 +18,7 @@
         <td><%= link.title %></td>
         <td><%= link.url %></td>
         <td><%= truncate(link.description, length: 50) %></td>
-
-        <% if link_to_video_clip?(link) or add_https_for_links(link) %>
+        <% if link_to_video_clip?(link) %>
           <td><%= link_to 'Watch clip', link.url, target: :_blank %></td>
           <% else %>
          <td><%= link_to 'Read post', link %> </td>
